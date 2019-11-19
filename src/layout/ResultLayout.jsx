@@ -1,12 +1,18 @@
 import React from 'react';
+import NewsPageHeader from '../components/NewsPageHeader';
+import Footer from '../components/Footer';
+
+// CSS
 
 const ResultLayout = (props) => {
-  console.log(props);
   return (
-  <div>
-    <h3>Result Page</h3>
-    {props.children}
-  </div>
+    <section className="section__result-pages">
+      <div className="container-fluid result-pages__container">
+        <NewsPageHeader />
+        {props.children}
+        <Footer />
+      </div>
+    </section>
   );
 };
 

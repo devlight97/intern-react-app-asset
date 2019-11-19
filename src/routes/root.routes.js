@@ -1,11 +1,11 @@
-import Home from '../pages/Home';
 import ResultRouter from '../routers/result.routers';
+import HomeRouters from '../routers/home.routers';
 
 export const routes = [
   {
     exact: true,
     path: '/',
-    component: Home,
+    component: HomeRouters,
   },
   {
     exact: true,

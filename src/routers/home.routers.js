@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { routes } from '../routes/home.routes';
+import HomeLayout from '../layout/HomeLayout';
 
 class HomeRouter extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-         
+
     };
   }
 
@@ -17,9 +18,11 @@ class HomeRouter extends Component {
 
   render() {
     return (
-      <Switch>
-        {this.renderRoute()}
-      </Switch>
+      <HomeLayout>
+        <Switch>
+          {this.renderRoute()}
+        </Switch>
+      </HomeLayout>
     );
   }
 }
