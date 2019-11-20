@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchResultItem = () => {
+const SearchResultPostItem = () => {
   return (
     <div className="rp-search-result-item">
       <div className="search-result__item-container d-flex"><img className="sr-item__modal" src="../../assets/img/icon-modal.png" alt="" />
@@ -52,4 +52,4 @@ const SearchResultItem = () => {
   );
 };
 
-export default SearchResultItem;
+export default SearchResultPostItem;

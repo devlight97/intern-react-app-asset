@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePageHeaderMobile = () => {
   return (
@@ -13,7 +14,7 @@ const HomePageHeaderMobile = () => {
                   <nav className="mobile-navbar">
                     <div className="mobile-navbar__content"><a className="navbar-brand" href="/"><img src="../../assets/img/asset-logo.png" alt="" /></a>
                       <div className="navbar__items">
-                        <div className="navbar--item"><a href="/ket-qua/thong-tin">Thông tin</a></div>
+                        <div className="navbar--item"><Link to="/result/news?page=1">Thông tin</Link></div>
                         <div className="navbar--item"><a href="/ban-do">Bản đồ</a></div>
                         <div className="navbar--item"><a href="/ket-qua/bang-gia">Bảng giá</a></div>
                         <div className="navbar--item"><a href="###">Danh bạ</a></div>

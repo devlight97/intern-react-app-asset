@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NewsPageHeader = () => {
   return (
@@ -7,7 +8,7 @@ const NewsPageHeader = () => {
         <div className="result-pages__header-top layout-header__top">
           <div className="d-flex align-items-center rp-header-top__container lh-top__container">
             <div className="rp-header-top__logo lh-top__logo">
-              <div className="header-top--logo lh-top--logo"><a href="/"><img src="../../../assets/img/icon-asset.png" alt="" /></a></div>
+              <div className="header-top--logo lh-top--logo"><Link to="/"><img src="../../../assets/img/icon-asset.png" alt="" /></Link></div>
             </div>
             <div className="rp-header-top__search-input lh-top__search-input">
               <div className="search-input">
@@ -43,8 +44,8 @@ const NewsPageHeader = () => {
         <div className="result-pages__header-navigation">
           <div className="rp-header-navigation header-navigation__container">
             <div className="header-navigation__items d-flex">
-              <div className="header-navigation--item is-actived"><a className="hn-item--text" href="/ket-qua">Tất cả</a></div>
-              <div className="header-navigation--item"><a className="hn-item--text" href="/ket-qua/thong-tin">Thông tin</a></div>
+              <div className="header-navigation--item"><a className="hn-item--text" href="/ket-qua">Tất cả</a></div>
+              <div className="header-navigation--item is-actived"><a className="hn-item--text" href="/ket-qua/thong-tin">Thông tin</a></div>
               <div className="header-navigation--item"><a className="hn-item--text" href="/ban-do">Bản đồ</a></div>
               <div className="header-navigation--item"><a className="hn-item--text" href="/ket-qua/bang-gia">Bảng giá</a></div>
               <div className="header-navigation--item dropdown">

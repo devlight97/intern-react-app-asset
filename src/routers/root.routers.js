@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { routes } from '../routes/root.routes';
 
 
@@ -20,11 +20,11 @@ class RootRouters extends Component {
   render() {
     return (
       <Switch>
-        <Redirect
+        {/* <Redirect
           exact
-          from="/result"
-          to="/result/news"
-        />
+          from="/result/news"
+          to="/result/news?page=1"
+        /> */}
         {this.renderRoute()}
       </Switch>
     );

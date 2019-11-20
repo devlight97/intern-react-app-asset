@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePageHeader = () => {
   return (
@@ -8,7 +9,7 @@ const HomePageHeader = () => {
           <div className="d-flex align-items-center hp-header-top__container lh-top__container">
             <div className="ml-auto hp-header-top__menu lh-top__menu">
               <div className="d-flex align-items-center ht-menu__items">
-                <div className="ht-menu--item"><a href="/ket-qua/thong-tin">Thông tin</a></div>
+                <div className="ht-menu--item"><Link to="/result/news?page=1">Thông tin</Link></div>
                 <div className="ht-menu--item"><a href="/ban-do">Bản đồ</a></div>
                 <div className="ht-menu--item"><a href="/ket-qua/bang-gia">Bảng giá</a></div>
                 <div className="ht-menu--item dropdown">
