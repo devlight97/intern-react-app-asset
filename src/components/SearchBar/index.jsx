@@ -49,7 +49,10 @@ class SearchBar extends Component {
 
   onBlurInputSearchTxtHandler(evt) {
     if (!evt.relatedTarget || evt.relatedTarget.tagName !== 'A') {
-      this.setState({ isFocus: false });
+      this.setState({
+        isFocus: false,
+        indexIsSelected: -1,
+      });
     }
   }
 
@@ -186,6 +189,7 @@ class SearchBar extends Component {
                   isFocus: false,
                   searchTxtDisplay: text,
                   searchTxt: text,
+                  indexIsSelected: -1,
                 })}
                 suggestion={suggestion}
                 isActive={indexIsSelected === index}
