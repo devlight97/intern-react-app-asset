@@ -1,6 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const SearchResultPostItem = () => {
+const SearchResultPostItem = (props) => {
+  // console.log(props.location)
+  const { location, post } = props;
+
+  const getDayPostPublished = () => {
+    const time = (Date.now() - Date.parse(post.publish_date)) / (1000 * 3600 * 24);
+    return Math.ceil(time);
+  }
+
   return (
     <div className="rp-search-result-item">
       <div className="search-result__item-container d-flex"><img className="sr-item__modal" src="../../assets/img/icon-modal.png" alt="" />
@@ -14,17 +23,13 @@ const SearchResultPostItem = () => {
                 <div className="ids-title--header d-flex"><a className="title--name" href="###">Duc Le</a>
                   <div className="title--rate d-flex align-items-center"><span>[Chung cư </span><span className="title_rate--highlight"> 3,5+ </span><img src="../../assets/img/star.png" alt="" />]</div>
                 </div>
-                <p className="mb-0 ids-title--category">đã đăng một bài viết trong <a className="ids-title--category" href="/ket-qua/thong-tin">Thông tin</a></p>
-                <p className="mb-0 ids-title--date-posted">10 ngày trước</p>
+                <p className="mb-0 ids-title--category">đã đăng một bài viết trong <a className="ids-title--category" href="/result/news?page=1">Thông tin</a></p>
+                <p className="mb-0 ids-title--date-posted">{getDayPostPublished()} ngày trước</p>
               </div>
             </div>
             <div className="item-details__post">
-              <div className="ids-post--title"><a href="###">Lý Chính Thắng khu đô thị tương lai đang trong giai đoạn hoàn thiện</a></div>
-              <div className="ids-post--content"><span>
-                Ngày 10-12/05: Có 123 thông báo kế hoạch lựa chọn nhà thầu chậm .... 1527/QĐ-UBND ngày
-                14/02/2019; KHLCNT của Ban Quản lý dự án đầu tư xây .... KHLCNT của Sở Tài chính tỉnh Hưng
-                …. cho dự án “Mua sắm thiết bị định .... Hạng mục: Xóm Ao Vàng, Cổ Rùa, Gò Chè, Phúc Lộc,
-                    Quyết Thắng, Tân ...</span></div>
+              <div className="ids-post--title"><Link to={`${location.pathname + location.search}&post_detail=${post._id}`}>{post.name}</Link></div>
+              <div className="ids-post--content"><span>{post.description}</span></div>
             </div>
             <div className="item-details__actions">
               <div className="action-buttons-bottom">

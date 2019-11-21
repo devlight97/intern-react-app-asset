@@ -1,3 +1,11 @@
+import axios from 'axios';
+import config from './config';
+
+const api = axios.create({
+  baseURL: config.baseURL,
+  timeout: 5000,
+})
+
 const getAutoCompleteSearchData = () => {
   return new Promise((resolve, reject) => {
     const err = false;
@@ -9,4 +17,8 @@ const getAutoCompleteSearchData = () => {
 
 export default {
   getAutoCompleteSearchData,
+
+  getSuggestionSearch(keyword) {
+    return api.get(`/search/suggestion?keyword=${keyword}`);
+  },
 };

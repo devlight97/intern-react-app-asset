@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NewsPageHeader = () => {
+import SearchBar from '../components/SearchBar';
+
+const NewsPageHeader = (props) => {
+  // console.log(props.history)
   return (
     <div className="result-pages__header layout-header">
       <div className="result-pages__header-container layout-header__container">
@@ -12,9 +15,7 @@ const NewsPageHeader = () => {
             </div>
             <div className="rp-header-top__search-input lh-top__search-input">
               <div className="search-input">
-                <div className="w-100 input-search__content collapsed" id="autoComplete__content">
-                  <input className="form-control" id="autoComplete" type="text" placeholder="Search ..." tabIndex={1} />
-                </div>
+                <SearchBar {...props} />
               </div>
             </div>
             <div className="ml-auto rp-header-top__menu lh-top__menu">
@@ -45,7 +46,7 @@ const NewsPageHeader = () => {
           <div className="rp-header-navigation header-navigation__container">
             <div className="header-navigation__items d-flex">
               <div className="header-navigation--item"><a className="hn-item--text" href="/ket-qua">Tất cả</a></div>
-              <div className="header-navigation--item is-actived"><a className="hn-item--text" href="/ket-qua/thong-tin">Thông tin</a></div>
+              <div className="header-navigation--item is-actived"><a className="hn-item--text" href="/result/news?page=1">Thông tin</a></div>
               <div className="header-navigation--item"><a className="hn-item--text" href="/ban-do">Bản đồ</a></div>
               <div className="header-navigation--item"><a className="hn-item--text" href="/ket-qua/bang-gia">Bảng giá</a></div>
               <div className="header-navigation--item dropdown">

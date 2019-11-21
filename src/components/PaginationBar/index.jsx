@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PaginationButton from './components/PaginationButton';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
+import { connect } from 'react-redux';
 
-const pageTotal = 5;
+const limit = 10;
 
 const hiddenStyle = {
   pointerEvents: 'none',
@@ -11,13 +12,14 @@ const hiddenStyle = {
 }
 
 
-export default class PaginationBar extends Component {
+class PaginationBar extends Component {
 
   constructor(props) {
     super(props)
   
     this.state = {
-      pageSelected: 1, 
+      pageSelected: 1,
+      pageTotal: 0,
     };
   }
 
@@ -34,6 +36,8 @@ export default class PaginationBar extends Component {
   }
   
   renderPaginationBar() {
+    const { postTotal } = this.props;
+    const pageTotal = Math.ceil(postTotal / limit);
     const { location } = this.props;
     const { pageSelected } = this.state;
     const paginationBtnList = [];
@@ -45,21 +49,26 @@ export default class PaginationBar extends Component {
     
     return paginationBtnList.map(num =>
       <PaginationButton
-      key={num}
-      pageNum={num}
-      location={location}
-      isActive={num === pageSelected}
-      setPageSelected={(page) => this.setPageSelected(page)}
+        key={num}
+        pageNum={num}
+        location={location}
+        isActive={num === pageSelected}
+        setPageSelected={(page) => this.setPageSelected(page)}
       />)
     }
 
     componentDidMount() {
-      this.setState({ pageSelected: this.getPageSelected() });
+      this.setState({
+        pageSelected: this.getPageSelected(),
+      });
     }
     
     render() {
       const { location } = this.props;
       const { pageSelected } = this.state;
+      const { postTotal } = this.props;
+      const pageTotal = Math.ceil(postTotal / limit);
+      // console.log(pageSelected);
       return (
       <div className="rp-search-result__pagination">
         <div className="search-result__pagination-container container" style={{ paddingLeft: '20rem' }}>
@@ -87,3 +96,11 @@ export default class PaginationBar extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    postTotal: state.news.postTotal,
+  };
+};
+
+export default connect(mapStateToProps, null)(PaginationBar);

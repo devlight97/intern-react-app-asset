@@ -13,18 +13,22 @@ class ResultRouters extends Component {
   }
 
   renderRoute() {
-    return routes.map(({ path, component: Component, exact }) => <Route exact={exact} key={path} path={path} component={Component} />);
+    return routes.map(({ path, component: Component, exact }) =>
+      <Route
+        exact={exact}
+        key={path}
+        path={path}
+        render={props => <Component {...props} />}
+      />);
   }
 
   render() {
     return (
-      <div>
-        <ResultLayout>
-          <Switch>
-            {this.renderRoute()}
-          </Switch>
-        </ResultLayout>
-      </div>
+      <ResultLayout {...this.props}>
+        <Switch>
+          {this.renderRoute()}
+        </Switch>
+      </ResultLayout>
     );
   }
 }

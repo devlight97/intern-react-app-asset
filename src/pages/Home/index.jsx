@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AutoCompleteResultList from '../../components/AutoCompleteResultList';
+import SearchBar from '../../components/SearchBar';
 
 class Home extends Component {
   constructor(props) {
@@ -23,7 +23,11 @@ class Home extends Component {
                 <div className="homepage--description">
                   <div className="description--container d-flex flex-column align-items-center"><span className="description-line line-1">Thị trường bất động sản Việt Nam</span></div>
                 </div>
-                <AutoCompleteResultList />
+                <div className="homepage--input-search">
+                  <div className="input-search__container d-flex justify-content-center">
+                    <SearchBar {...this.props} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

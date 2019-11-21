@@ -7,10 +7,11 @@ import Footer from '../components/Footer';
 // CSS
 
 const ResultLayout = (props) => {
+  // console.log(props.history)
   return (
     <section className="section__result-pages">
       <div className="container-fluid result-pages__container">
-        <NewsPageHeader />
+        <NewsPageHeader {...props} />
         {props.children}
         {/* <PaginationBar /> */}
         <div className="homepage__footer layout-footer" style={{ position: 'static' }}>

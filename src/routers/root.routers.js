@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { routes } from '../routes/root.routes';
+// import { Redirect } from 'react-router-dom';
 
 
 class RootRouters extends Component {
@@ -9,12 +10,18 @@ class RootRouters extends Component {
     super(props)
 
     this.state = {
-         
+
     };
   }
 
   renderRoute() {
-    return routes.map(({ path, component: Component, exact }) => <Route exact={exact} key={path} path={path} component={Component} />);
+    return routes.map(({ path, component: Component, exact }) =>
+      <Route
+        exact={exact}
+        key={path}
+        path={path}
+        component={Component}
+      />);
   }
 
   render() {
