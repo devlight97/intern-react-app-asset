@@ -2,9 +2,9 @@ import {
   LOAD_POST_DATA,
   LOAD_POST_DATA_SUCCESS,
   LOAD_POST_DATA_FAIL,
-} from './constants';
+} from '../pages/PostDetail/constants';
 
-import postServices from '../../services/post.services';
+import postServices from '../services/post.services';
 
 // ACTION:
 export const loadPostDataFail = (failReason) => ({

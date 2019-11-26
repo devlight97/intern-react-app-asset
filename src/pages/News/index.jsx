@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import {
   loadPostListData,
   countPostTotal,
-} from './actions';
+} from '../../actions/news.action';
 
 import PostDetail from '../PostDetail';
 

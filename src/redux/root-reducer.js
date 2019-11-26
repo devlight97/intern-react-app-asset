@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import homeReducer from '../pages/Home/home.reducer';
-import postDetailReducer from '../pages/PostDetail/reducer';
-import newsReducer from '../pages/News/reducer';
+import homeReducer from '../reducers/home.reducer';
+import postDetailReducer from '../reducers/post-detail.reducer';
+import newsReducer from '../reducers/news.reducer';
 
 export default combineReducers({
   home: homeReducer,

@@ -1,8 +1,8 @@
 import {
-  LOAD_POST_DATA,
-  LOAD_POST_DATA_FAIL,
-  LOAD_POST_DATA_SUCCESS,
-} from './constants';
+  POST_DETAIL_LOAD_POST_DATA,
+  POST_DETAIL_LOAD_POST_DATA_FAIL,
+  POST_DETAIL_LOAD_POST_DATA_SUCCESS,
+} from '../constants/action-type';
 
 const initialState = {
   post: {},
@@ -13,13 +13,13 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
 
-  case LOAD_POST_DATA:
+  case POST_DETAIL_LOAD_POST_DATA:
     return { ...state, ...payload };
 
-  case LOAD_POST_DATA_FAIL:
+  case POST_DETAIL_LOAD_POST_DATA_FAIL:
     return { ...state, ...payload };
 
-  case LOAD_POST_DATA_SUCCESS:
+  case POST_DETAIL_LOAD_POST_DATA_SUCCESS:
     return { ...state, ...payload };
 
   default:

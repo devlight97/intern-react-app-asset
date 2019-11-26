@@ -3,9 +3,9 @@ import {
   LOAD_POST_LIST_DATA_FAIL,
   LOAD_POST_LIST_DATA_SUCCESS,
   COUNT_POST_TOTAL,
-} from './constants';
+} from '../pages/News/constants';
 
-import postServices from '../../services/post.services';
+import postServices from '../services/post.services';
 
 export const loadPostListDataFail = (failReason) => ({
   type: LOAD_POST_LIST_DATA_FAIL,

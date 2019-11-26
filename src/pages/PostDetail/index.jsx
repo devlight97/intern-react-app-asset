@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import newsService from '../../services/news.services';
-import { loadPostData } from './actions';
+import { loadPostData } from '../../actions/post-detail.actions';
 // import {} from 'history';
 
 const activeStyle = {

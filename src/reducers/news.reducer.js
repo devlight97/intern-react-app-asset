@@ -1,9 +1,9 @@
 import {
-  LOAD_POST_LIST_DATA,
-  LOAD_POST_LIST_DATA_FAIL,
-  LOAD_POST_LIST_DATA_SUCCESS,
-  COUNT_POST_TOTAL,
-} from './constants';
+  NEWS_LOAD_POST_LIST_DATA,
+  NEWS_LOAD_POST_LIST_DATA_FAIL,
+  NEWS_LOAD_POST_LIST_DATA_SUCCESS,
+  NEWS_COUNT_POST_TOTAL,
+} from '../constants/action-type';
 
 const initialState = {
   isFetching: false,
@@ -17,16 +17,16 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
 
-  case LOAD_POST_LIST_DATA:
+  case NEWS_LOAD_POST_LIST_DATA:
     return { ...state, ...payload };
 
-  case LOAD_POST_LIST_DATA_FAIL:
+  case NEWS_LOAD_POST_LIST_DATA_FAIL:
     return { ...state, ...payload };
 
-  case LOAD_POST_LIST_DATA_SUCCESS:
+  case NEWS_LOAD_POST_LIST_DATA_SUCCESS:
     return { ...state, ...payload };
 
-  case COUNT_POST_TOTAL:
+  case NEWS_COUNT_POST_TOTAL:
     return { ...state, ...payload };
 
   default:

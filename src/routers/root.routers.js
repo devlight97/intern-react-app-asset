@@ -1,8 +1,11 @@
+/* eslint-disable no-restricted-globals */
 
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { routes } from '../routes/root.routes';
-// import { Redirect } from 'react-router-dom';
+import notificationService from '../services/notification.services';
+
+// import { socketNotification } from '../services/sockets/socket.notification';
 
 
 class RootRouters extends Component {
@@ -12,6 +15,17 @@ class RootRouters extends Component {
     this.state = {
 
     };
+  }
+
+  async componentDidMount() {
+    if (!Notification) {
+      alert('Desktop notifications not available in your browser. Try Chromium.');
+      return;
+    }
+
+    if (Notification.permission !== 'granted') Notification.requestPermission();
+
+    notificationService.subscribe();
   }
 
   renderRoute() {
@@ -27,11 +41,6 @@ class RootRouters extends Component {
   render() {
     return (
       <Switch>
-        {/* <Redirect
-          exact
-          from="/result/news"
-          to="/result/news?page=1"
-        /> */}
         {this.renderRoute()}
       </Switch>
     );
